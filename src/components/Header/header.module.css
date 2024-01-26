@@ -1,3 +1,13 @@
+.headerMain {
+  width: 100%;
+  z-index: 20;
+  position: sticky;
+  top: 0;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-duration: 300ms;
+}
 .navbarMain .container {
   display: flex;
   flex-wrap: wrap;
@@ -96,74 +106,72 @@
   justify-content: center;
   top: -0.5rem;
   right: -0.5rem;
-
 }
 /* dropdown menu css start */
 .navbarMain .navDropdown {
-    position: relative;
+  position: relative;
 }
 .navbarMain .navDropdown:hover .dropdownMenu {
-    display: block !important;
+  display: block !important;
 }
 .navbarMain .navDropdown .dropdownMenu {
-    display: none;
-    position: absolute;
-    max-width: 28rem;
-    width: 100vw;
-    border-radius: 1.5rem;
-    padding: 1rem;
-    margin-top: 0.75rem;
-    z-index: 10;
-    top: 100%;
-    left: -2rem;
-    overflow: hidden;
-    background-color: rgba(255, 255, 255, 1);
-    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  display: none;
+  position: absolute;
+  max-width: 28rem;
+  width: 100vw;
+  border-radius: 1.5rem;
+  padding: 1rem;
+  margin-top: 0.75rem;
+  z-index: 10;
+  top: 100%;
+  left: -2rem;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
 }
 .navbarMain .navDropdown .dropdownMenuItem {
-    position: relative;
-    display: flex;
-    align-items: center;
-    line-height: 1.5rem;
-    font-size: 0.875rem;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    column-gap: 1.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  line-height: 1.5rem;
+  font-size: 0.875rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  column-gap: 1.5rem;
 }
-.navbarMain .navDropdown .dropdownMenuItem:hover{
-    background-color: rgba(249, 250, 251, 1);
+.navbarMain .navDropdown .dropdownMenuItem:hover {
+  background-color: rgba(249, 250, 251, 1);
 }
 .navbarMain .navDropdown .dropdownMenuItem:hover .dropDownItemIconDiv {
-    background-color: #fff !important;
+  background-color: #fff !important;
 }
 .navbarMain .navDropdown .dropdownMenuItem:hover .dropDownItemIcon {
-    color: rgba(79, 70, 229, 1) !important;
+  color: rgba(79, 70, 229, 1) !important;
 }
 .navbarMain .navDropdown .dropDownItemIconDiv {
-    display: flex;
-    flex: none;
-    align-items: center;
-    justify-content: center;
-    width: 2.75rem;
-    height: 2.75rem;
-    background-color: rgba(249, 250, 251, 1);
-    border-radius: 0.5rem;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  background-color: rgba(249, 250, 251, 1);
+  border-radius: 0.5rem;
 }
 .navbarMain .navDropdown .dropDownItemIcon {
-    color: rgba(75, 85, 99, 1);
-    width: 1.5rem;
-    height: 1.5rem;
+  color: rgba(75, 85, 99, 1);
+  width: 1.5rem;
+  height: 1.5rem;
 }
 .navbarMain .navDropdown .dropDownItemRightPart {
-    flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 .navbarMain .navDropdown .linkOverLap {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 /* dropdown menu css end */
 

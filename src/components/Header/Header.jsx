@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./header.module.css";
 import Image from "next/image";
 import { FaChevronDown, FaRegHeart } from "react-icons/fa";
@@ -44,13 +44,37 @@ const subMenuData = [
 ];
 
 const Header = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [show, setShow] = useState("translate-y-0");
 
   const handleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
+  const handleNavbarScroll = () => {
+    const currentScrollY = window.scrollY;
+    // console.log(currentScrollY);
+    if (currentScrollY > 200) {
+      if (currentScrollY > lastScrollY) {
+        setShow("-translate-y-full");
+      } else {
+        setShow("shadow-md");
+      }
+    } else {
+      setShow("translate-y-0");
+    }
+    setLastScrollY(currentScrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleNavbarScroll);
+    return () => {
+      window.removeEventListener("scroll", handleNavbarScroll);
+    };
+  }, [lastScrollY]);
   return (
-    <header className={styles["headerMain"]}>
+    <header className={`${styles["headerMain"]} ${show}`}>
       <nav
         className={`${styles["navbarMain"]} ${
           isMobileMenuOpen ? styles["active"] : ""
@@ -93,7 +117,7 @@ const Header = () => {
                     {item.name}
                   </Link>
                   {item?.subMenu && (
-                    <>
+                    <React.Fragment>
                       <FaChevronDown
                         className={styles["dropdownIcon"]}
                         size={16}
@@ -122,7 +146,7 @@ const Header = () => {
                           </li>
                         ))}
                       </ul>
-                    </>
+                    </React.Fragment>
                   )}
                 </li>
               ))}
