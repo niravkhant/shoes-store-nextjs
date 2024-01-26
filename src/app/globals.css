@@ -7,3 +7,28 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.commonBtn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out 0s;
+  background-color: #fff;
+  color: #000;
+  border: 1.5px solid #000;
+}
+.commonBtn:hover {
+  background-color: #000;
+  color: #fff;
+}
+.commonBtn.fill {
+  background-color: #000;
+  color: #fff;
+}
+.commonBtn.fill:hover {
+  background-color: #191919;
+  color: #fff;
+}

@@ -37,7 +37,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 3rem;
+  gap: 1.5rem;
   padding: 12px;
 }
 .navbarMain .singleMenuList {
@@ -66,6 +66,37 @@
   background-color: #000;
   color: #fff;
   border-radius: 6px;
+}
+.navbarMain .navbarMenuItems {
+  display: flex;
+  align-items: center;
+}
+.navbarMain .navActionButtons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 12px;
+}
+.navbarMain .cartActionDiv {
+  display: flex;
+  position: relative;
+}
+.navbarMain .cartCount {
+  position: absolute;
+  background-color: #000;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 600;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -0.5rem;
+  right: -0.5rem;
+
 }
 /* dropdown menu css start */
 .navbarMain .navDropdown {
@@ -125,6 +156,14 @@
 }
 .navbarMain .navDropdown .dropDownItemRightPart {
     flex: 1 1 auto;
+}
+.navbarMain .navDropdown .linkOverLap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
 }
 /* dropdown menu css end */
 

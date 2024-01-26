@@ -2,8 +2,10 @@
 import React from "react";
 import styles from "./header.module.css";
 import Image from "next/image";
-import { FaChevronDown } from "react-icons/fa";
-import { RiAppleFill } from "react-icons/ri";
+import { FaChevronDown, FaRegHeart } from "react-icons/fa";
+import { RiAppleFill, RiFireFill } from "react-icons/ri";
+import { GiSonicShoes } from "react-icons/gi";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import Link from "next/link";
 
 const categories = [
@@ -21,6 +23,7 @@ const subMenuData = [
     name: "Running Shoes",
     description: "Running cleanses the mind and body.",
     url: "/products/running-shoes",
+    icon: <RiAppleFill className={styles["dropDownItemIcon"]} />,
   },
   {
     id: 2,
@@ -28,6 +31,7 @@ const subMenuData = [
     description:
       "Casual shoes look great and are comfortable to wear throughout the day.",
     url: "/products/casual-shoes",
+    icon: <GiSonicShoes className={styles["dropDownItemIcon"]} />,
   },
   {
     id: 3,
@@ -35,6 +39,7 @@ const subMenuData = [
     description:
       "Sneakers are versatile and can be worn with a variety of outfits.",
     url: "/products/sneakers",
+    icon: <RiFireFill className={styles["dropDownItemIcon"]} />,
   },
 ];
 
@@ -58,8 +63,9 @@ const Header = () => {
                 className={styles["logoImage"]}
                 src="images/logo.svg"
                 alt="logo"
-                height={0}
-                width={0}
+                height={100}
+                width={100}
+                layout="responsive"
               />
             </div>
             <h2 className={styles["brandTitle"]}>Shoes Store</h2>
@@ -80,7 +86,10 @@ const Header = () => {
                   key={item.id}
                   className={`${styles["singleMenuList"]} ${styles["navDropdown"]}`}
                 >
-                  <Link href={item?.url} className={styles["singleMenuItem"]}>
+                  <Link
+                    href={item?.url ? item.url : ""}
+                    className={styles["singleMenuItem"]}
+                  >
                     {item.name}
                   </Link>
                   {item?.subMenu && (
@@ -96,14 +105,15 @@ const Header = () => {
                             key={subItem.id}
                           >
                             <div className={styles["dropDownItemIconDiv"]}>
-                              <RiAppleFill
-                                className={styles["dropDownItemIcon"]}
-                              />
+                              {subItem.icon}
                             </div>
                             <div className={styles["dropDownItemRightPart"]}>
-                              <Link href={subItem.url} className={styles["dropdownMenuName"]}>
+                              <Link
+                                href={subItem.url}
+                                className={styles["dropdownMenuName"]}
+                              >
                                 {subItem.name}
-                                <span className="absolute inset-0"></span>
+                                <span className={styles["linkOverLap"]}></span>
                               </Link>
                               <p className="mt-1 text-gray-600">
                                 {subItem.description}
@@ -117,6 +127,18 @@ const Header = () => {
                 </li>
               ))}
             </ul>
+            <div className={styles["navActionButtons"]}>
+              <button className="commonBtn fill">Login</button>
+
+              <div className={styles["cartActionDiv"]}>
+                <FaRegHeart size={25} />
+                <span className={styles["cartCount"]}>10</span>
+              </div>
+              <div className={styles["cartActionDiv"]}>
+                <AiOutlineShoppingCart size={25} />
+                <span className={styles["cartCount"]}>5</span>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
