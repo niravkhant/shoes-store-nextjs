@@ -1,0 +1,142 @@
+'use client'
+import React from "react";
+import styles from "./header.module.css";
+import Image from "next/image";
+import { FaChevronDown } from "react-icons/fa";
+import { RiAppleFill } from "react-icons/ri";
+
+const categories = [
+    {id:1, name: "Home", url: "/"},
+    {id:2, name: "Products", url: "/products"},
+    {id:3, name: "Category", subMenu: true},
+    {id:4, name: "Shop", url: "/shop"},
+    {id:5, name: "About us", url: "/about-us"},
+    {id:6, name: "Contact us", url: "/contact-us"},
+];
+
+const subMenuData = [
+    {id:1, name: "Running Shoes", description: "Running cleanses the mind and body.", url: "/products/running-shoes"},
+    {id:2, name: "Casual shoes", description: "Casual shoes look great and are comfortable to wear throughout the day.", url: "/products/casual-shoes"},
+    {id:3, name: "Sneakers", description: "Sneakers are versatile and can be worn with a variety of outfits.", url: "/products/sneakers"},
+
+]
+
+const Header = () => {
+
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+
+    const handleMobileMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
+    }
+  return (
+    <header className={styles["headerMain"]}>
+      <nav className={`${styles["navbarMain"]} ${isMobileMenuOpen ? styles['active'] : ""}`}>
+        <div className={`${styles["container"]} container`}>
+          <a href="/" className={styles["navbarBrand"]}>
+            <div className={styles["brandIcon"]}>
+              <Image
+                className={styles["logoImage"]}
+                src="images/logo.svg"
+                alt="logo"
+                height={0}
+                width={0}
+              />
+            </div>
+            <h2 className={styles["brandTitle"]}>Shoes Store</h2>
+          </a>
+          <div className={styles["navbarToggller"]}>
+            <button type="button" className={`${styles["navbarToggleButton"]}`} onClick={handleMobileMenu}>
+              <span className="sr-only">Open main menu</span>
+            </button>
+          </div>
+          <div className={styles["navbarMenuItems"]}>
+            <ul className={styles["MenuItemsList"]}>
+              <li className={styles["singleMenuList"]}>
+                <a
+                  href="/"
+                  className={`${styles["singleMenuItem"]}`}
+                >
+                  Home
+                </a>
+              </li>
+              <li className={styles["singleMenuList"]}>
+                <a href="" className={styles["singleMenuItem"]}>
+                  Products
+                </a>
+              </li>
+              <li
+                className={`${styles["singleMenuList"]} ${styles["navDropdown"]}`}
+              >
+                <a href="" className={styles["singleMenuItem"]}>
+                  Category
+                </a>
+                <FaChevronDown className={styles["dropdownIcon"]} size={16} />
+                <ul className={styles["dropdownMenu"]}>
+                  <li className={styles["dropdownMenuItem"]}>
+                    <div className={styles["dropDownItemIconDiv"]}>
+                      <RiAppleFill className={styles["dropDownItemIcon"]} />
+                    </div>
+                    <div className={styles["dropDownItemRightPart"]}>
+                      <a href="" className={styles["dropdownMenuName"]}>
+                        Running Shoes
+                        <span class="absolute inset-0"></span>
+                      </a>
+                      <p class="mt-1 text-gray-600">
+                        Get a better understanding of your traffic
+                      </p>
+                    </div>
+                  </li>
+                  <li className={styles["dropdownMenuItem"]}>
+                    <div className={styles["dropDownItemIconDiv"]}>
+                      <RiAppleFill className={styles["dropDownItemIcon"]} />
+                    </div>
+                    <div className={styles["dropDownItemRightPart"]}>
+                      <a href="" className={styles["dropdownMenuName"]}>
+                      Casual shoes
+                        <span class="absolute inset-0"></span>
+                      </a>
+                      <p class="mt-1 text-gray-600">
+                      Casual shoes look great and are comfortable to wear throughout the day.
+                      </p>
+                    </div>
+                  </li>
+                  <li className={styles["dropdownMenuItem"]}>
+                    <div className={styles["dropDownItemIconDiv"]}>
+                      <RiAppleFill className={styles["dropDownItemIcon"]} />
+                    </div>
+                    <div className={styles["dropDownItemRightPart"]}>
+                      <a href="" className={styles["dropdownMenuName"]}>
+                        Sneakers
+                        <span class="absolute inset-0"></span>
+                      </a>
+                      <p class="mt-1 text-gray-600">
+                        Get a better understanding of your traffic
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li className={styles["singleMenuList"]}>
+                <a href="" className={styles["singleMenuItem"]}>
+                  Shop
+                </a>
+              </li>
+              <li className={styles["singleMenuList"]}>
+                <a href="" className={styles["singleMenuItem"]}>
+                  About us
+                </a>
+              </li>
+              <li className={styles["singleMenuList"]}>
+                <a href="" className={styles["singleMenuItem"]}>
+                  Contact us
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+  );
+};
+
+export default Header;
