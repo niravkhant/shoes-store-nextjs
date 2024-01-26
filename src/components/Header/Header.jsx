@@ -4,6 +4,7 @@ import styles from "./header.module.css";
 import Image from "next/image";
 import { FaChevronDown } from "react-icons/fa";
 import { RiAppleFill } from "react-icons/ri";
+import Link from "next/link";
 
 const categories = [
   { id: 1, name: "Home", url: "/" },
@@ -51,7 +52,7 @@ const Header = () => {
         }`}
       >
         <div className={`${styles["container"]} container`}>
-          <a href="/" className={styles["navbarBrand"]}>
+          <Link href="/" className={styles["navbarBrand"]}>
             <div className={styles["brandIcon"]}>
               <Image
                 className={styles["logoImage"]}
@@ -62,7 +63,7 @@ const Header = () => {
               />
             </div>
             <h2 className={styles["brandTitle"]}>Shoes Store</h2>
-          </a>
+          </Link>
           <div className={styles["navbarToggller"]}>
             <button
               type="button"
@@ -79,10 +80,10 @@ const Header = () => {
                   key={item.id}
                   className={`${styles["singleMenuList"]} ${styles["navDropdown"]}`}
                 >
-                  <a href={item?.url} className={styles["singleMenuItem"]}>
+                  <Link href={item?.url} className={styles["singleMenuItem"]}>
                     {item.name}
-                  </a>
-                  {item.subMenu && (
+                  </Link>
+                  {item?.subMenu && (
                     <>
                       <FaChevronDown
                         className={styles["dropdownIcon"]}
@@ -100,10 +101,10 @@ const Header = () => {
                               />
                             </div>
                             <div className={styles["dropDownItemRightPart"]}>
-                              <a href={subItem.url} className={styles["dropdownMenuName"]}>
+                              <Link href={subItem.url} className={styles["dropdownMenuName"]}>
                                 {subItem.name}
                                 <span className="absolute inset-0"></span>
-                              </a>
+                              </Link>
                               <p className="mt-1 text-gray-600">
                                 {subItem.description}
                               </p>
