@@ -33,6 +33,41 @@
   color: #fff;
 }
 
-.height-1000px{
-  min-height: 2000px;
+.swiper {
+  width: 100%;
+  height: 80vh;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.headingDiv {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.headingDivTitle {
+  font-size: 32px;
+  font-weight: 600;
+  color: #212121;
+}
+.headingDivTitleDesc {
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+}
+.spaceTopBottom{
+  padding: 60px 0;
 }

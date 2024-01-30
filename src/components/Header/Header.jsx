@@ -22,7 +22,7 @@ const subMenuData = [
     id: 1,
     name: "Running Shoes",
     description: "Running cleanses the mind and body.",
-    url: "/products/running-shoes",
+    url: "/category/running-shoes",
     icon: <RiAppleFill className={styles["dropDownItemIcon"]} />,
   },
   {
@@ -30,7 +30,7 @@ const subMenuData = [
     name: "Casual shoes",
     description:
       "Casual shoes look great and are comfortable to wear throughout the day.",
-    url: "/products/casual-shoes",
+    url: "/category/casual-shoes",
     icon: <GiSonicShoes className={styles["dropDownItemIcon"]} />,
   },
   {
@@ -38,7 +38,7 @@ const subMenuData = [
     name: "Sneakers",
     description:
       "Sneakers are versatile and can be worn with a variety of outfits.",
-    url: "/products/sneakers",
+    url: "/category/sneakers",
     icon: <RiFireFill className={styles["dropDownItemIcon"]} />,
   },
 ];

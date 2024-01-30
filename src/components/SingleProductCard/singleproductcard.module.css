@@ -1,0 +1,67 @@
+.singleProductMain {
+  width: 250px;
+  height: auto;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 15px;
+}
+.singleProductMain .productImageDiv {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.singleProductMain .productImage {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  object-fit: cover;
+}
+
+.brandName {
+  font-size: 18px;
+  font-weight: 600;
+  color: #232323;
+  margin-bottom: 5px;
+}
+.productTitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 5px;
+}
+.priceNDiscount {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 5px;
+}
+.sellingPrice {
+  width: calc(100 / 3);
+  font-size: 16px;
+  font-weight: 500;
+  color: #212121;
+}
+.originalMaxPrice {
+  width: calc(100 / 3);
+  margin-left: 8px;
+  text-decoration: line-through;
+  font-size: 14px;
+  color: #878787;
+}
+.discount {
+  width: calc(100 / 3);
+  color: #388e3c;
+  font-size: 13px;
+  letter-spacing: -0.2px;
+  font-weight: 500;
+  display: inline-block;
+  margin-left: 8px;
+}
+.sizeSpan {
+  color: #878787;
+  font-weight: 500;
+}
+.sizeNumberSpan {
+  color: #000;
+}

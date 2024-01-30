@@ -1,0 +1,9 @@
+.productContainerMain {
+  display: flex;
+  max-width: 1320px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin: 0 auto;
+  padding: 10px;
+}
